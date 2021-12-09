@@ -16,19 +16,20 @@ const UserForm = (props) => {
       });
     }
     if (event.target.name === "age") {
-      console.log(event.target.value);
       setNewEntry((prevNewEntry) => {
         const age = {
           age: Number(event.target.value.trim()),
-          id: Math.random() * 20,
         };
+
         const updatedNewEntry = Object.assign(newEntry, age);
+
         return updatedNewEntry;
       });
     }
   };
   const formSubmitHandler = (event) => {
     event.preventDefault();
+    console.log("From UserForm", newEntry);
     props.addRecord(newEntry);
   };
   return (
