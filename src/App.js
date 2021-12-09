@@ -1,7 +1,8 @@
 import "./App.css";
+import UserForm from "./components/InputForm/UserForm";
 
 function App() {
-  return <h1>User Record</h1>;
+  return <UserForm />;
 }
 
 export default App;

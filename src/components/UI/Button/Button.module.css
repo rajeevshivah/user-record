@@ -1,0 +1,24 @@
+.button_wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+.button_style {
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  width: 12vw;
+  height: 5vh;
+  background-color: antiquewhite;
+}
+
+.button_style:hover {
+  cursor: pointer;
+  width: 13vw;
+  height: 6vh;
+  background-color: beige;
+  color: brown;
+}
