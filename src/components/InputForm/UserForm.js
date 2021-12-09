@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "../UI/Button/Button";
 import InputCrad from "../UI/Cards/InputCrad";
 import WrapperCard from "../UI/Cards/WrapperCard";
-import style from "./UserForm.module.css";
 
 const UserForm = (props) => {
   const [newEntry, setNewEntry] = useState({});
@@ -21,6 +20,7 @@ const UserForm = (props) => {
       setNewEntry((prevNewEntry) => {
         const age = {
           age: Number(event.target.value.trim()),
+          id: Math.random() * 20,
         };
         const updatedNewEntry = Object.assign(newEntry, age);
         return updatedNewEntry;
