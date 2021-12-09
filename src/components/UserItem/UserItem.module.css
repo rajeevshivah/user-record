@@ -1,0 +1,9 @@
+.li {
+  border-bottom: 1px solid rosybrown;
+  width: 45vw;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.label {
+  font-size: medium;
+}
