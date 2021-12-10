@@ -1,16 +1,10 @@
-import "./App.css";
+import style from "./App.module.css";
 import UserForm from "./components/InputForm/UserForm";
 import React, { useState } from "react";
 import UserList from "./components/UserList/UserList";
 
 function App() {
-  const [records, setRecords] = useState([
-    { name: "Anuj", age: 19, id: "a1" },
-    { name: "Ankit", age: 25, id: "a2" },
-    { name: "anush", age: 1, id: "a3" },
-    { name: "anush", age: 148, id: "a4" },
-    { name: "anush", age: 182, id: "a5" },
-  ]);
+  const [records, setRecords] = useState([]);
 
   const addRecord = (record) => {
     setRecords((prevState) => {
@@ -28,7 +22,11 @@ function App() {
   return (
     <>
       <UserForm addRecord={addRecord} />
-      <UserList userRecords={records} />
+      {records.length > 0 ? (
+        <UserList userRecords={records} />
+      ) : (
+        <h2 className={style.no_record}>No record available</h2>
+      )}
     </>
   );
 }
