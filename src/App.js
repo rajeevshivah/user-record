@@ -13,17 +13,15 @@ function App() {
   ]);
 
   const addRecord = (record) => {
-    console.log("From App jS", record);
     setRecords((prevState) => {
-      console.log("From App Js previous records", prevState);
       const updatedRecord = [...records];
-      console.log("From App Js", updatedRecord);
+
       updatedRecord.unshift({
         name: record.name,
         age: record.age,
         id: Math.random() * 20,
       });
-      console.log("Updated record", updatedRecord);
+
       return updatedRecord;
     });
   };

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+
 import Button from "../UI/Button/Button";
 import InputCrad from "../UI/Cards/InputCrad";
 import WrapperCard from "../UI/Cards/WrapperCard";
 
 const UserForm = (props) => {
   const [newEntry, setNewEntry] = useState({});
+
   const userRecordHandler = (event) => {
     if (event.target.name === "username") {
       setNewEntry((prevNewEntry) => {
@@ -27,9 +29,10 @@ const UserForm = (props) => {
       });
     }
   };
+
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    console.log("From UserForm", newEntry);
+
     props.addRecord(newEntry);
   };
   return (
@@ -51,7 +54,9 @@ const UserForm = (props) => {
             onChange={(event) => userRecordHandler(event)}
           />
         </InputCrad>
-        <Button type="submit">Add User</Button>
+        <Button type="submit" trigger={true}>
+          Add User
+        </Button>
       </form>
     </WrapperCard>
   );
