@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Button from "../UI/Button/Button";
 import InputCrad from "../UI/Cards/InputCrad";
 import WrapperCard from "../UI/Cards/WrapperCard";
+import style from "./UserForm.module.css";
 
 const UserForm = (props) => {
   const [newEntry, setNewEntry] = useState({});
@@ -36,19 +37,21 @@ const UserForm = (props) => {
     props.addRecord(newEntry);
   };
   return (
-    <WrapperCard>
-      <form onSubmit={formSubmitHandler}>
+    <form onSubmit={formSubmitHandler}>
+      <WrapperCard>
         <InputCrad>
-          <label>Username</label>
+          <label className={style.label}>Username</label>
           <input
+            className={style.input}
             type="text"
             name="username"
             onChange={(event) => userRecordHandler(event)}
           />
         </InputCrad>
         <InputCrad>
-          <label>Age(Years)</label>
+          <label className={style.label}>Age(Years)</label>
           <input
+            className={style.input}
             type="number"
             name="age"
             onChange={(event) => userRecordHandler(event)}
@@ -57,8 +60,8 @@ const UserForm = (props) => {
         <Button type="submit" trigger={true}>
           Add User
         </Button>
-      </form>
-    </WrapperCard>
+      </WrapperCard>
+    </form>
   );
 };
 

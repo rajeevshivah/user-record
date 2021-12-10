@@ -17,8 +17,7 @@
 
 .button_style:hover {
   cursor: pointer;
-  width: 13vw;
-  height: 6vh;
+
   background-color: beige;
   color: brown;
 }
